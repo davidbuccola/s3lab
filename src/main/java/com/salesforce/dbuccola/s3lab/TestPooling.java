@@ -123,6 +123,12 @@ public class TestPooling {
                     log.debug("Consumed " + IOUtils.consume(s3Object.getObjectContent()) + " bytes");
 
                 } catch (Exception e) {
+                    for (Throwable cause = e; cause != null; cause = cause.getCause()) {
+                        if (cause instanceof InterruptedException) {
+                            return; // Already on the way down so no need to log anything
+                        }
+                    }
+
                     log.error("S3 getObject failed", e);
                     scheduler.shutdownNow();
                 }
