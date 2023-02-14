@@ -1,0 +1,21 @@
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%6r %highlight(%.-1level) %-20logger{0} %-20t - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="stdout"/>
+    </root>
+
+    <!-- Things you might want to change for debugging. -->
+    <logger name="com.salesforce.dbuccola" level="info"/>
+    <logger name="com.amazonaws" level="warn"/>
+
+</configuration>

@@ -1,0 +1,14 @@
+*.iml
+*.ipr
+*.iws
+.classpath
+.gradle
+.idea
+.project
+.settings
+.ssh
+build
+target
+null
+null.lck
+release.properties

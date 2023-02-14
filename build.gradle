@@ -1,0 +1,46 @@
+plugins {
+    id 'idea'
+    id 'java'
+    id 'application'
+}
+
+apply from: 'common.gradle'
+
+description = 'Experiment with the S3 API'
+
+version = '1.0-SNAPSHOT'
+group "com.salesforce.dbuccola.${rootProject.name}"
+
+applicationName = project.name
+applicationDefaultJvmArgs = ['-Xmx8g']
+mainClassName = 'com.salesforce.dbuccola.s3lab.S3Lab'
+
+// Symbolic versions for select dependencies (usually ones that have multiple artifacts or that show up often)
+ext {
+    awsVersion = '1.12.13'
+    slf4jVersion = '2.0.3'
+}
+
+dependencies {
+    implementation 'commons-cli:commons-cli:1.5.0'
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation "com.amazonaws:aws-java-sdk-s3:${awsVersion}"
+    implementation "com.amazonaws:aws-java-sdk-cloudwatchmetrics:${awsVersion}"
+    implementation 'com.google.guava:guava:31.0.1-jre'
+    implementation "net.davidbuccola.davidbuccola-commons:davidbuccola-commons-core:1.22-SNAPSHOT"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.slf4j:jul-to-slf4j:${slf4jVersion}"
+    
+    runtimeOnly 'javax.xml.bind:jaxb-api:2.2.2'
+    runtimeOnly "org.slf4j:jcl-over-slf4j:${slf4jVersion}"
+    runtimeOnly 'ch.qos.logback:logback-classic:1.4.4'
+}
+
+wrapper {
+    gradleVersion = '7.2'
+    distributionType = 'ALL'
+}
+
+repositories {
+    mavenCentral()
+}
