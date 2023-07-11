@@ -1,4 +1,4 @@
-package com.salesforce.dbuccola.s3lab;
+package net.davidbuccola.s3lab;
 
 import java.util.Arrays;
 

@@ -1,11 +1,11 @@
-package com.salesforce.dbuccola.s3lab;
+package net.davidbuccola.s3lab;
 
-import static com.salesforce.dbuccola.s3lab.S3Lab.BUCKET_NAME;
-import static com.salesforce.dbuccola.s3lab.S3Lab.DEFAULT_ENDPOINT;
-import static com.salesforce.dbuccola.s3lab.S3Lab.DEFAULT_PASSWORD;
-import static com.salesforce.dbuccola.s3lab.S3Lab.DEFAULT_REGION;
-import static com.salesforce.dbuccola.s3lab.S3Lab.DEFAULT_USERNAME;
-import static com.salesforce.dbuccola.s3lab.S3Lab.FILE_NAME_PREFIX;
+import static net.davidbuccola.s3lab.S3Lab.BUCKET_NAME;
+import static net.davidbuccola.s3lab.S3Lab.DEFAULT_ENDPOINT;
+import static net.davidbuccola.s3lab.S3Lab.DEFAULT_PASSWORD;
+import static net.davidbuccola.s3lab.S3Lab.DEFAULT_REGION;
+import static net.davidbuccola.s3lab.S3Lab.DEFAULT_USERNAME;
+import static net.davidbuccola.s3lab.S3Lab.FILE_NAME_PREFIX;
 import static java.lang.Integer.parseInt;
 import static net.davidbuccola.commons.CommandLineUtils.parseCommandLine;
 
